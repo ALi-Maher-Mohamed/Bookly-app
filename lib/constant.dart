@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xff100b20);
-// const kLogo = 'assets/images/Logo.png';
+const kTransationDuration = Duration(milliseconds: 250);
