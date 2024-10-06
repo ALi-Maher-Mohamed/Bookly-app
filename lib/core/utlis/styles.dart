@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 
 abstract class Styles {
-  static const titleMediam = TextStyle(
-    fontSize: 19,
+  static const textStyle18 = TextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.w600,
+  );
+  static const textStyle14 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
+  static const textStyle20 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const textStyle16 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
   );
 }
