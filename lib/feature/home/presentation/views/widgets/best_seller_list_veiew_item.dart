@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utlis/assets.dart';
 import 'package:bookly_app/core/utlis/styles.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/best_seller_book_item.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -29,39 +30,43 @@ class BestSellerListViewItem extends StatelessWidget {
           const SizedBox(
             width: 30,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: const Text(
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                  'Harry Poter and the Goblet of Fire',
-                  style: Styles.textStyle20,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: const Text(
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    'Harry Poter and the Goblet of Fire',
+                    style: Styles.textStyle20,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              const Text(
-                'J.K. Rolling',
-                style: Styles.textStyle14,
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              Row(
-                children: [
-                  Text(
-                    '19.9 € ',
-                    style: Styles.textStyle20.copyWith(
-                      fontWeight: FontWeight.bold,
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
+                  'J.K. Rolling',
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '19.9 € ',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
-                ],
-              )
-            ],
+                    const BookRating(),
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
