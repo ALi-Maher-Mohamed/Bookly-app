@@ -57,17 +57,15 @@ class BestSellerListViewItem extends StatelessWidget {
                     'lknadgkanmdg;ka',
                     style: Styles.textStyle14,
                   ),
-                  Container(
-                    child: const Row(
-                      children: [
-                        Text(
-                          '181615 \$',
-                          style: Styles.textStyle20,
-                        ),
-                        Spacer(),
-                        BookRating()
-                      ],
-                    ),
+                  const Row(
+                    children: [
+                      Text(
+                        '181615 \$',
+                        style: Styles.textStyle20,
+                      ),
+                      Spacer(),
+                      BookRating()
+                    ],
                   )
                 ],
               ),
