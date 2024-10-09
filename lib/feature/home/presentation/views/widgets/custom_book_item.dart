@@ -7,7 +7,7 @@ class CustombBookImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.7 / 4,
+      aspectRatio: 2.6 / 3.6,
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.amber,

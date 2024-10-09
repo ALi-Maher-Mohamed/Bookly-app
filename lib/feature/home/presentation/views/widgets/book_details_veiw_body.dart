@@ -1,9 +1,8 @@
 import 'package:bookly_app/constant.dart';
-import 'package:bookly_app/core/utlis/styles.dart';
-import 'package:bookly_app/feature/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/feature/home/presentation/views/widgets/books_action.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly_app/feature/home/presentation/views/widgets/custo_book_detail_app_bar.dart';
-import 'package:bookly_app/feature/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/similar_book_section.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,43 +11,30 @@ class BookDetailVeiwBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: kPrimaryPaddig,
-      child: Column(
-        children: [
-          const CustomBookDetailAppBar(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: const CustombBookImage(),
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: kPrimaryPaddig,
+            child: Column(
+              children: [
+                CustomBookDetailAppBar(),
+                BookDetailsSection(),
+                Expanded(
+                  child: SizedBox(
+                    height: 40,
+                  ),
+                ),
+                SimilarSection(),
+                SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
           ),
-          const SizedBox(
-            height: 43,
-          ),
-          Text(
-            'The Jungle Book',
-            style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          Text(
-            'The Jungle Book',
-            style: Styles.textStyle18.copyWith(
-                fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          const BookRating(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          const SizedBox(
-            height: 37,
-          ),
-          const BookAction(),
-        ],
-      ),
+        )
+      ],
     );
   }
 }
