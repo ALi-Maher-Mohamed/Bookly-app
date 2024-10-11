@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/errors/failure.dart';
-import 'package:bookly_app/core/utlis/aspi_service.dart';
+import 'package:bookly_app/core/utlis/api_service.dart';
 import 'package:bookly_app/feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/feature/home/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -36,7 +36,27 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiService.get(
+          endPoint: 'volumes?q=subject:programming&filtering=free-ebooks');
+
+      List<BookModel> books = [];
+
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      } else {
+        return left(
+          ServerFailure(e.toString()),
+        );
+      }
+    }
   }
 }
