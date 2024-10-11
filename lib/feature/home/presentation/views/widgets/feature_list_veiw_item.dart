@@ -13,7 +13,10 @@ class FeatureBooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: CustombBookImage(),
+            child: CustombBookImage(
+              imageUrl:
+                  'https://i0.wp.com/picjumbo.com/wp-content/uploads/silhouette-of-a-guy-with-a-cap-at-red-sky-sunset-free-image.jpeg?h=800&quality=80',
+            ),
           );
         },
       ),
