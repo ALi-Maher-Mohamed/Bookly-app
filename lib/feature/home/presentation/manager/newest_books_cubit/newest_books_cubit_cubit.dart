@@ -6,8 +6,8 @@ import '../../../data/models/book_model/book_model.dart';
 
 part 'newest_books_cubit_state.dart';
 
-class NewestBooksCubitCubit extends Cubit<NewestBooksCubitState> {
-  NewestBooksCubitCubit(this.homeRepo) : super(NewestBooksCubitInitial());
+class NewestBooksCubit extends Cubit<NewestBooksCubitState> {
+  NewestBooksCubit(this.homeRepo) : super(NewestBooksCubitInitial());
 
   final HomeRepo homeRepo;
 
