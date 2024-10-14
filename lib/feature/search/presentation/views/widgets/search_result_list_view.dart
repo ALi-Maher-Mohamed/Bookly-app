@@ -1,4 +1,3 @@
-import 'package:bookly_app/feature/home/presentation/views/widgets/best_seller_list_veiew_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListVeiw extends StatelessWidget {
