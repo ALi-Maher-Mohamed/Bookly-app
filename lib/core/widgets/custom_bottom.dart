@@ -2,14 +2,15 @@ import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottom extends StatelessWidget {
-  const CustomBottom({
-    super.key,
-    this.borderRadius,
-    required this.backgroundColor,
-    required this.textColor,
-    required this.text,
-    this.fonSize,
-  });
+  const CustomBottom(
+      {super.key,
+      this.borderRadius,
+      required this.backgroundColor,
+      required this.textColor,
+      required this.text,
+      this.fonSize,
+      this.onPressed});
+  final void Function()? onPressed;
   final String text;
   final BorderRadius? borderRadius;
   final Color backgroundColor;
@@ -30,7 +31,7 @@ class CustomBottom extends StatelessWidget {
           style: Styles.textStyle18.copyWith(
               fontWeight: FontWeight.bold, color: textColor, fontSize: fonSize),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }
